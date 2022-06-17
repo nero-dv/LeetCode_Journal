@@ -1,4 +1,5 @@
-def twoSum(nums, target):
+class Solution(object):
+    def twoSum(nums, target):
         """
         :type nums: List[int]
         :type target: int
