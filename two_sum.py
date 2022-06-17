@@ -27,9 +27,3 @@ def twoSum(nums, target):
                 right += 1
         return []
     
-testcase = [2,7,11,15]
-target = 9
-# [3,2,4]
-# 6
-# [3,3]
-# 6
