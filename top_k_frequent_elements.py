@@ -1,21 +1,31 @@
-class Solution(object):
-    def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
-        keys = []
-        counted = []
-        idx = []
+# class Solution(object):
+from calendar import c
+from operator import indexOf
 
-        for num in nums:
-            if num not in keys:
-                keys.append(num)
-        for key in range(len(keys)):
-            counted.append([nums.count(keys[key]), keys[key]])
-        counted.sort(reverse=True)
-        for i in range(0, k):
-            idx.append(counted[i][1])
 
-        return idx
+def topKFrequent(array, k):
+    """
+    :type array: List[int]
+    :type k: int
+    :rtype: List[int]
+    """
+    keys = []
+    counted = []
+    idx = []
+    
+    keys = list(set(array))
+    for key in range(len(keys)):
+        counted.append([array.count(keys[key]), keys[key]])
+    
+    for i in range(len(array)):
+        idx.append(max(counted)[1])
+        counted.remove(max(counted))
+    print(idx)
+    
+    
+    return idx
+
+array = [1,1,1,2,2,2,2,2,3,3]
+k = 3
+
+topKFrequent(array, k)
