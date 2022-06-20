@@ -1,22 +1,13 @@
-from re import X
-
-
-def productExceptSelf(nums):
-    
-    result = [1] * len(nums)
-    prefix = 1
-    
-    for i in range(len(nums)):
-        result[i] = prefix
-        prefix *= nums[i]
-    postfix = 1
-    
-    for i in range(len(nums)-1, -1, -1):
-        result[i] *= postfix
-        postfix *= nums[i]
-    print(result)
-    
-    
-nums = [1, 2, 3, 4]
-
-productExceptSelf(nums)
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        array_length = len(nums)
+        result = [1] * array_length
+        previous_index = 1
+        last_index = 1
+        for idx in range(len(nums)):
+            result[idx] = previous_index
+            previous_index *= nums[idx]
+        for i in range(array_length - 1, -1, -1):
+            result[i] *= last_index
+            last_index *= nums[i]
+        return result
