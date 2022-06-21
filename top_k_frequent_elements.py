@@ -1,7 +1,19 @@
-import heapq
+from heapq import heapify, nlargest
+import re
 
 class Solution:
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        
-        result = heapq.nlargest(k, nums)
-        return result[-1]
+    def topKFrequent(nums, k):
+        counted = []
+        keys = set(nums)
+        for idx, key in enumerate(keys):
+            count = len(re.findall(str(key), str(nums)))
+            counted.append([count, key])
+        heapify(counted)
+        topk = [n[1] for n in nlargest(k, counted)]
+        return topk
+
+
+
+nums = [1,1,1,2,2,3,3,3,3,4,4,4,4,4,4,5]
+k = 2
+print(Solution.topKFrequent(nums, k))

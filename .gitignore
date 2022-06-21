@@ -1,4 +1,4 @@
 top_k_frequent_elements_burned.py
 k.py
-test.py
-.vscode/*.*
+sanity_checks
+.vscode
