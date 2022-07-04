@@ -1,5 +1,6 @@
 # Beats 90% in runtime, beats 70% in memory.
 
+
 class Solution:
     def longestConsecutive(nums: list[int]) -> int:
         # Create a set to store the numbers
@@ -17,11 +18,11 @@ class Solution:
                 # Update the longest consecutive sequence
                 ans = max(ans, curr - num + 1)
         return ans
-        
+
+
 # Test cases
-        
-nums = [0,3,7,2,5,8,4,6,0,1]
+
+nums = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
 nums2 = [-3, -2, -1, 0, 1, 2, 3, 4]
 
 print(Solution.longestConsecutive(nums))
-

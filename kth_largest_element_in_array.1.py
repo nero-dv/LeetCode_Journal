@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def findKthLargest(nums, k):
     """
     :type nums: List[int]
@@ -18,7 +19,8 @@ def findKthLargest(nums, k):
 
     return element[-k]
 
-nums = [3,2,1,5,6,4]
+
+nums = [3, 2, 1, 5, 6, 4]
 k = 2
 
 print(findKthLargest(nums, k))

@@ -4,7 +4,7 @@ class Solution:
             return 1
         result = ""
         result_compare = []
-        
+
         for x in s:
             if x not in result:
                 result += x
@@ -20,7 +20,7 @@ class Solution:
             count = 0
 
         return count
-            
+
 
 s = " "
 print(Solution().lengthOfLongestSubstring(s))
