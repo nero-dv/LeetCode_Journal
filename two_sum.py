@@ -1,27 +1,12 @@
-class Solution(object):
-    def twoSum(nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
+from typing import List
 
-        left = 0
-        right = 1
 
-        a_len = len(nums)
-
-        if a_len == 2 and nums[0] + nums[1] == target:
-            return [0, 1]
-        if a_len == 2 and nums[0] + nums[1] != target:
-            return []
-
-        while left < a_len:
-            if right == a_len:
-                left += 1
-                right = left + 1
-            if nums[left] + nums[right] == target:
-                return [left, right]
-            else:
-                right += 1
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        prev_value: dict[int, int] = {}
+        for idx, num in enumerate(nums):
+            value: int = target - num
+            if value in prev_value:
+                return [idx, prev_value[idx]]
+            prev_value[num] = idx
         return []
